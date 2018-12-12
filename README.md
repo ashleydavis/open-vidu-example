@@ -2,8 +2,8 @@
 
 Example of video conferencing based on OpenVidu.
 
-This repo replicates Open Vidu Hello World example through a Node.js proxy server.
-It contains Vagrant and Docker-Compose files that boots the OpenVidu server and the proxy server.
+This repo replicates Open Vidu Hello World with the web page delivered through a simple Node.js web server.
+It contains Vagrant and Docker-Compose files that boots the OpenVidu server and the Node.js server.
 
 Once you have booted the system (as per the following instructions) please point your browser at http://localhost:8000 to see the Hello World example.
 

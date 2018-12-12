@@ -6,6 +6,7 @@ services:
     container_name: openvidu-server-kms
     volumes:
      - /var/run/docker.sock:/var/run/docker.sock
+     - ./videos:/videos
     ports:
      - "4443:4443"
     environment:
@@ -28,7 +29,6 @@ services:
     environment:
      - PORT=80
      - NODE_ENV=development
-     - PROXY_TARGET=https://openvidu-server-kms:4443', 
     depends_on:
      - openvidu-server-kms
     restart: always
