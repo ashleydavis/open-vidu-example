@@ -1,0 +1,929 @@
+Building web
+Step 1/6 : FROM node:8
+ ---> 3b7ecd51ffe5
+Step 2/6 : WORKDIR /usr/src/app
+ ---> Using cache
+ ---> 3cf9644fd351
+Step 3/6 : COPY package*.json ./
+ ---> Using cache
+ ---> 87f6f1332d02
+Step 4/6 : COPY nodemon.json ./
+ ---> Using cache
+ ---> 52945201e18b
+Step 5/6 : EXPOSE 80
+ ---> Using cache
+ ---> f0c6461efc9e
+Step 6/6 : CMD npm config set cache-min 9999999     && npm install     && npm run start:dev
+ ---> Using cache
+ ---> a19ef7b75a4f
+Successfully built a19ef7b75a4f
+Successfully tagged vagrant_web:latest
+Starting openvidu-server-kms ... 
+[1A[2KStarting openvidu-server-kms ... [32mdone[0m[1BStarting web                 ... 
+[1A[2KStarting web                 ... [32mdone[0m[1BAttaching to openvidu-server-kms, web
+openvidu-server-kms    | /usr/lib/python2.7/dist-packages/supervisor/options.py:297: UserWarning: Supervisord is running as root and it is searching for its configuration file in default locations (including its current working directory); you probably want to specify a "-c" argument specifying an absolute path to a configuration file for improved security.
+openvidu-server-kms    |   'Supervisord is running as root and it is searching '
+openvidu-server-kms    | 2018-12-12 09:48:33,506 CRIT Supervisor running as root (no user in config file)
+openvidu-server-kms    | 2018-12-12 09:48:33,506 WARN Included extra file "/etc/supervisor/conf.d/supervisord.conf" during parsing
+openvidu-server-kms    | Unlinking stale socket /var/run/supervisor.sock
+openvidu-server-kms    | 2018-12-12 09:48:33,826 INFO RPC interface 'supervisor' initialized
+openvidu-server-kms    | 2018-12-12 09:48:33,827 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+openvidu-server-kms    | 2018-12-12 09:48:33,827 INFO supervisord started with pid 1
+openvidu-server-kms    | 2018-12-12 09:48:34,829 INFO spawned: 'kms' with pid 9
+openvidu-server-kms    | 2018-12-12 09:48:34,832 INFO spawned: 'openvidu-server' with pid 10
+openvidu-server-kms    | 2018-12-12 09:48:34,937 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.053236035 [334m    9[00m 0x56394413f410 [37mDEBUG  [00m [00mKurentoModuleManager ModuleManager.cpp:158:loadModules:[00m Looking for modules, path: /usr/lib/x86_64-linux-gnu/kurento/modules
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:34,939 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.055953406 [334m    9[00m 0x56394413f410 [37mDEBUG  [00m [00mKurentoModuleManager ModuleManager.cpp:174:loadModules:[00m Found file: /usr/lib/x86_64-linux-gnu/kurento/modules/libkmscoremodule.so
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:34,941 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.057930814 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00mKurentoModuleManager ModuleManager.cpp:90:loadModule:[00m Load file: /usr/lib/x86_64-linux-gnu/kurento/modules/libkmscoremodule.so, module name: /usr/lib/x86_64-linux-gnu/kurento/modules/libkmscoremodule.so
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:34,942 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.059004471 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00mKurentoModuleManager ModuleManager.cpp:137:loadModule:[00m Loaded module: core, version: 6.8.1, date: Oct 23 2018 17:07:59
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:34,944 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.060508423 [334m    9[00m 0x56394413f410 [37mDEBUG  [00m [00mKurentoModuleManager ModuleManager.cpp:174:loadModules:[00m Found file: /usr/lib/x86_64-linux-gnu/kurento/modules/libkmselementsmodule.so
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:34,971 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.087686800 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00mKurentoModuleManager ModuleManager.cpp:90:loadModule:[00m Load file: /usr/lib/x86_64-linux-gnu/kurento/modules/libkmselementsmodule.so, module name: /usr/lib/x86_64-linux-gnu/kurento/modules/libkmselementsmodule.so
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:34,982 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.097862670 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00mKurentoModuleManager ModuleManager.cpp:137:loadModule:[00m Loaded module: elements, version: 6.8.1, date: Oct 23 2018 17:13:49
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:34,988 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.104706612 [334m    9[00m 0x56394413f410 [37mDEBUG  [00m [00mKurentoModuleManager ModuleManager.cpp:174:loadModules:[00m Found file: /usr/lib/x86_64-linux-gnu/kurento/modules/libkmsfiltersmodule.so
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:34,992 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.107927063 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00mKurentoModuleManager ModuleManager.cpp:90:loadModule:[00m Load file: /usr/lib/x86_64-linux-gnu/kurento/modules/libkmsfiltersmodule.so, module name: /usr/lib/x86_64-linux-gnu/kurento/modules/libkmsfiltersmodule.so
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:34,994 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.111164668 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00mKurentoModuleManager ModuleManager.cpp:137:loadModule:[00m Loaded module: filters, version: 6.8.1, date: Oct 23 2018 17:20:29
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:34,997 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.113260571 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00m  KurentoMediaServer main.cpp:240:main:[00m Kurento Media Server version: 6.8.1
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:34,999 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.116112255 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00m   KurentoLoadConfig loadConfig.cpp:228:loadConfig:[00m Reading configuration from: /etc/kurento/kurento.conf.json
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:35,002 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.118444244 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00m   KurentoLoadConfig loadConfig.cpp:165:loadModulesConfigFromDir:[00m Looking for config files in /etc/kurento/modules
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:35,003 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.120294121 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00m   KurentoLoadConfig loadConfig.cpp:165:loadModulesConfigFromDir:[00m Looking for config files in /etc/kurento/modules/kurento
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:35,006 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.123141394 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00m   KurentoLoadConfig loadConfig.cpp:190:loadModulesConfigFromDir:[00m Loaded module config from: /etc/kurento/modules/kurento/MediaElement.conf.ini
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:35,008 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.124914532 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00m   KurentoLoadConfig loadConfig.cpp:190:loadModulesConfigFromDir:[00m Loaded module config from: /etc/kurento/modules/kurento/WebRtcEndpoint.conf.ini
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:35,011 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.128165216 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00m   KurentoLoadConfig loadConfig.cpp:190:loadModulesConfigFromDir:[00m Loaded module config from: /etc/kurento/modules/kurento/BaseRtpEndpoint.conf.ini
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:35,013 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.130086796 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00m   KurentoLoadConfig loadConfig.cpp:190:loadModulesConfigFromDir:[00m Loaded module config from: /etc/kurento/modules/kurento/HttpEndpoint.conf.ini
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:35,015 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.131844113 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00m   KurentoLoadConfig loadConfig.cpp:190:loadModulesConfigFromDir:[00m Loaded module config from: /etc/kurento/modules/kurento/SdpEndpoint.conf.json
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:35,017 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.133615442 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00m   KurentoLoadConfig loadConfig.cpp:190:loadModulesConfigFromDir:[00m Loaded module config from: /etc/kurento/modules/kurento/UriEndpoint.conf.ini
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:35,019 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.135951231 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00m   KurentoLoadConfig loadConfig.cpp:244:loadConfig:[00m Configuration loaded successfully
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:35,021 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.137882591 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00m   KurentoLoadConfig loadConfig.cpp:250:loadConfig:[00m Loaded config in effect:
+openvidu-server-kms    | {
+openvidu-server-kms    |     "mediaServer": {
+openvidu-server-kms    |         "resources": {
+openvidu-server-kms    |             "garbageCollectorPeriod": "240",
+openvidu-server-kms    |             "disableRequestCache": "false"
+openvidu-server-kms    |         },
+openvidu-server-kms    |         "net": {
+openvidu-server-kms    |             "websocket": {
+openvidu-server-kms    |                 "port": "8888",
+openvidu-server-kms    |                 "path": "kurento",
+openvidu-server-kms    |                 "threads": "10"
+openvidu-server-kms    |             }
+openvidu-server-kms    |         }
+openvidu-server-kms    |     },
+openvidu-server-kms    |     "configPath": "\/etc\/kurento",
+openvidu-server-kms    |     "modules": {
+openvidu-server-kms    |         "kurento": {
+openvidu-server-kms    |             "MediaElement": {
+openvidu-server-kms    |                 "configPath": "\/etc\/kurento\/modules\/kurento"
+openvidu-server-kms    |             },
+openvidu-server-kms    |             "WebRtcEndpoint": {
+openvidu-server-kms    |                 "stunServerAddress": "stun.l.google.com",
+openvidu-server-kms    |                 "stunServerPort": "19302",
+openvidu-server-kms    |                 "configPath": "\/etc\/kurento\/modules\/kurento"
+openvidu-server-kms    |             },
+openvidu-server-kms    |             "BaseRtpEndpoint": {
+openvidu-server-kms    |                 "configPath": "\/etc\/kurento\/modules\/kurento"
+openvidu-server-kms    |             },
+openvidu-server-kms    |             "HttpEndpoint": {
+openvidu-server-kms    |                 "serverAddress": "localhost",
+openvidu-server-kms    |                 "port": "9091",
+openvidu-server-kms    |                 "configPath": "\/etc\/kurento\/modules\/kurento"
+openvidu-server-kms    |             },
+openvidu-server-kms    |             "SdpEndpoint": {
+openvidu-server-kms    |                 "numAudioMedias": "1",
+openvidu-server-kms    |                 "numVideoMedias": "1",
+openvidu-server-kms    |                 "audioCodecs": [
+openvidu-server-kms    |                     {
+openvidu-server-kms    |                         "name": "opus\/48000\/2"
+openvidu-server-kms    |                     },
+openvidu-server-kms    |                     {
+openvidu-server-kms    |                         "name": "PCMU\/8000"
+openvidu-server-kms    |                     },
+openvidu-server-kms    |                     {
+openvidu-server-kms    |                         "name": "AMR\/8000"
+openvidu-server-kms    |                     }
+openvidu-server-kms    |                 ],
+openvidu-server-kms    |                 "videoCodecs": [
+openvidu-server-kms    |                     {
+openvidu-server-kms    |                         "name": "VP8\/90000"
+openvidu-server-kms    |                     },
+openvidu-server-kms    |                     {
+openvidu-server-kms    |                         "name": "H264\/90000"
+openvidu-server-kms    |                     }
+openvidu-server-kms    |                 ],
+openvidu-server-kms    |                 "configPath": "\/etc\/kurento\/modules\/kurento"
+openvidu-server-kms    |             },
+openvidu-server-kms    |             "UriEndpoint": {
+openvidu-server-kms    |                 "defaultPath": "file:\/\/\/var\/kurento\/",
+openvidu-server-kms    |                 "configPath": "\/etc\/kurento\/modules\/kurento"
+openvidu-server-kms    |             }
+openvidu-server-kms    |         }
+openvidu-server-kms    |     }
+openvidu-server-kms    | }
+openvidu-server-kms    | 
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:35,029 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.145683587 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00mKurentoServerMethods ServerMethods.cpp:90:ServerMethods:[00m Reaching 80.00% usage of system resources will fail with NOT_ENOUGH_RESOURCES error
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:35,031 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.147040004 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00mKurentoServerMethods ServerMethods.cpp:125:ServerMethods:[00m RPC Request Cache is ENABLED
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:35,036 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.151792662 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00mKurentoWebSocketTransport WebSocketTransport.cpp:216:WebSocketTransport:[00m Secure websocket server not enabled
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:35,037 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.154081616 [334m    9[00m 0x56394413f410 [36mINFO   [00m [00m  KurentoMediaServer main.cpp:257:main:[00m Kurento Media Server started
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:35,044 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.160870884 [334m    9[00m 0x56394413f500 [37mDEBUG  [00m [00m   KurentoWorkerPool WorkerPool.cpp:40:workerThreadLoop:[00m Working thread starting
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:35,046 DEBG 'kms' stdout output:
+openvidu-server-kms    | 0:00:00.162685159 [334m    9[00m 0x7f12340020a0 [37mDEBUG  [00m [00m   KurentoWorkerPool WorkerPool.cpp:40:workerThreadLoop:[00m Working thread starting
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:36,060 INFO success: kms entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+openvidu-server-kms    | 2018-12-12 09:48:36,062 INFO success: openvidu-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+openvidu-server-kms    | 2018-12-12 09:48:37,869 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | 09:48:36,370 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+openvidu-server-kms    | 09:48:36,376 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+openvidu-server-kms    | 09:48:36,377 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/openvidu-server.jar!/BOOT-INF/classes!/logback.xml]
+openvidu-server-kms    | 09:48:36,673 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@312b1dae - URL [jar:file:/openvidu-server.jar!/BOOT-INF/classes!/logback.xml] is not of type file
+openvidu-server-kms    | 09:48:36,974 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+openvidu-server-kms    | 09:48:37,009 |-INFO in ch.qos.logback.core.joran.action.TimestampAction - Using context birth as time reference.
+openvidu-server-kms    | 09:48:37,064 |-INFO in ch.qos.logback.core.joran.action.TimestampAction - Adding property to the context with key="myTimestamp" and value="09-48-36" to the LOCAL scope
+openvidu-server-kms    | 09:48:37,066 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+openvidu-server-kms    | 09:48:37,139 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
+openvidu-server-kms    | 09:48:37,332 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - This appender no longer admits a layout as a sub-component, set an encoder instead.
+openvidu-server-kms    | 09:48:37,332 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - To ensure compatibility, wrapping your layout in LayoutWrappingEncoder.
+openvidu-server-kms    | 09:48:37,332 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also http://logback.qos.ch/codes.html#layoutInsteadOfEncoder for details
+openvidu-server-kms    | 09:48:37,335 |-INFO in ch.qos.logback.classic.joran.action.LevelAction - ROOT level set to INFO
+openvidu-server-kms    | 09:48:37,335 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
+openvidu-server-kms    | 09:48:37,860 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+openvidu-server-kms    | 09:48:37,861 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@7530d0a - Registering current configuration as safe fallback point
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:37,873 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | 
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:37,890 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:37,880 [main] io.openvidu.server.OpenViduServer (main) - Using /dev/urandom for secure random generation
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:39,589 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | 
+openvidu-server-kms    | ______________________________________________
+openvidu-server-kms    |    ____               __      ___     _       
+openvidu-server-kms    |   / __ \              \ \    / (_)   | |      
+openvidu-server-kms    |  | |  | |_ __   ___ _ _\ \  / / _  __| |_   _
+openvidu-server-kms    |  | |  | | '_ \ / _ \ '_ \ \/ / | |/ _` | | | |
+openvidu-server-kms    |  | |__| | |_) |  __/ | | \  /  | | (_| | |_| |
+openvidu-server-kms    |   \____/| .__/ \___|_| |_|\/   |_|\__,_|\__,_|
+openvidu-server-kms    |         | |
+openvidu-server-kms    |         |_|             version 2.6.0
+openvidu-server-kms    | ______________________________________________                                          
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:39,593 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | 
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:40,105 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:40,101 [main] io.openvidu.server.OpenViduServer (logStarting) - Starting OpenViduServer on openvidu-server-kms.vagrant_default with PID 10 (/openvidu-server.jar started by root in /)
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:40,108 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:40,108 [main] io.openvidu.server.OpenViduServer (logStartupProfileInfo) - The following profiles are active: docker
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:41,295 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:41,279 [ound-preinit] org.hibernate.validator.internal.util.Version (<clinit>) - HV000001: Hibernate Validator 5.2.4.Final
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:41,732 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:41,727 [main] org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext (prepareRefresh) - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5d6f64b1: startup date [Wed Dec 12 09:48:41 UTC 2018]; root of context hierarchy
+openvidu-server-kms    | 
+web                    | npm WARN openvidu-proxy-server@1.0.0 No repository field.
+web                    | npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.4 (node_modules/fsevents):
+web                    | npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.4: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+web                    | 
+web                    | audited 2365 packages in 7.207s
+web                    | found 0 vulnerabilities
+web                    | 
+web                    | 
+web                    | > openvidu-proxy-server@1.0.0 start:dev /usr/src/app
+web                    | > nodemon --legacy-watch
+web                    | 
+web                    | [33m[nodemon] 1.18.8[39m
+web                    | [33m[nodemon] to restart at any time, enter `rs`[39m
+web                    | [33m[nodemon] watching: /usr/src/app/src/**/*[39m
+web                    | [32m[nodemon] starting `node ./src/index.js`[39m
+openvidu-server-kms    | 2018-12-12 09:48:45,345 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:45,344 [main] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor (<init>) - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:45,559 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:45,558 [main] io.openvidu.server.OpenViduServer (init) - OpenVidu Server using custom URL: [wss://127.0.0.1:8000]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:46,795 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:46,795 [main] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer (initialize) - Tomcat initialized with port(s): 4443 (https)
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:46,828 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:46,827 [main] org.apache.catalina.core.StandardService (log) - Starting service Tomcat
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:46,831 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:46,830 [main] org.apache.catalina.core.StandardEngine (log) - Starting Servlet Engine: Apache Tomcat/8.5.6
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:46,998 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:46,997 [-startStop-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] (log) - Initializing Spring embedded WebApplicationContext
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:46,999 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:46,999 [-startStop-1] org.springframework.web.context.ContextLoader (prepareEmbeddedWebApplicationContext) - Root WebApplicationContext: initialization completed in 5275 ms
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:47,365 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:47,365 [-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean (configure) - Mapping filter: 'characterEncodingFilter' to: [/*]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:47,368 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:47,367 [-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean (configure) - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:47,370 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:47,370 [-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean (configure) - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:47,373 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:47,372 [-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean (configure) - Mapping filter: 'requestContextFilter' to: [/*]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:47,377 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:47,377 [-startStop-1] org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean (configure) - Mapping filter: 'springSecurityFilterChain' to: [/*]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:47,379 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:47,379 [-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean (onStartup) - Mapping servlet: 'dispatcherServlet' to [/]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:48,403 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [WARN] 2018-12-12 09:48:48,402 [main] io.openvidu.server.coturn.CoturnCredentialsService (<init>) - No COTURN server is installed in the host machine. Response: /bin/sh: 1: turnadmin: not found
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:48,405 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [WARN] 2018-12-12 09:48:48,403 [main] io.openvidu.server.coturn.CoturnCredentialsService (<init>) - No COTURN server will be automatically configured for clients
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:48,452 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:48,451 [main] io.openvidu.server.OpenViduServer (kmsManager) - Configuring OpenVidu Server to use first of the following kmss: [ws://localhost:8888/kurento]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:48,489 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:48,488 [atExec-e1-t0] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (connectNativeClient) - [KurentoClient]  Connecting native client
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:48,490 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:48,489 [atExec-e1-t0] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (connectNativeClient) - [KurentoClient]  Creating new NioEventLoopGroup
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:48,841 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:48,840 [oopGroup-2-1] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (initChannel) - [KurentoClient]  Inititating new Netty channel. Will create new handler too!
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:48,981 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [WARN] 2018-12-12 09:48:48,980 [atExec-e1-t0] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (closeChannel) - [KurentoClient]  Trying to close a JsonRpcClientNettyWebSocket with channel == null
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:48,986 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [WARN] 2018-12-12 09:48:48,983 [atExec-e1-t0] org.kurento.jsonrpc.client.JsonRpcClient (run) - [KurentoClient]  Error sending heartbeat to server. Exception: [KurentoClient]  Exception connecting to WebSocket server ws://localhost:8888/kurento
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:48,994 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [WARN] 2018-12-12 09:48:48,984 [atExec-e1-t0] org.kurento.jsonrpc.client.JsonRpcClient (closeHeartbeatOnFailure) - [KurentoClient]  Stopping heartbeat and closing client: failure during heartbeat mechanism
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:48,986 [main] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (connectNativeClient) - [KurentoClient]  Connecting native client
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:48,992 [main] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (connectNativeClient) - [KurentoClient]  Creating new NioEventLoopGroup
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:49,010 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:49,009 [oopGroup-3-1] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (initChannel) - [KurentoClient]  Inititating new Netty channel. Will create new handler too!
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:49,021 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [WARN] 2018-12-12 09:48:49,020 [main] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (closeChannel) - [KurentoClient]  Trying to close a JsonRpcClientNettyWebSocket with channel == null
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:49,027 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [WARN] 2018-12-12 09:48:49,027 [main] org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext (refresh) - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sessionRestController': Unsatisfied dependency expressed through field 'sessionManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sessionManager': Unsatisfied dependency expressed through field 'kcProvider'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kmsManager' defined in io.openvidu.server.OpenViduServer: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [io.openvidu.server.kurento.KurentoClientProvider]: Factory method 'kmsManager' threw exception; nested exception is org.kurento.commons.exception.KurentoException: Exception connecting to KMS
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:49,034 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:49,034 [main] org.apache.catalina.core.StandardService (log) - Stopping service Tomcat
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:49,091 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:49,090 [main] org.springframework.boot.autoconfigure.logging.AutoConfigurationReportLoggingInitializer (logAutoConfigurationReport) - 
+openvidu-server-kms    | 
+openvidu-server-kms    | Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:49,108 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [ERROR] 2018-12-12 09:48:49,107 [main] org.springframework.boot.SpringApplication (reportFailure) - Application startup failed
+openvidu-server-kms    | org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sessionRestController': Unsatisfied dependency expressed through field 'sessionManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sessionManager': Unsatisfied dependency expressed through field 'kcProvider'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kmsManager' defined in io.openvidu.server.OpenViduServer: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [io.openvidu.server.kurento.KurentoClientProvider]: Factory method 'kmsManager' threw exception; nested exception is org.kurento.commons.exception.KurentoException: Exception connecting to KMS
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:592)
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:370)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1219)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:754)
+openvidu-server-kms    | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:861)
+openvidu-server-kms    | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+openvidu-server-kms    | 	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+openvidu-server-kms    | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+openvidu-server-kms    | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+openvidu-server-kms    | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+openvidu-server-kms    | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+openvidu-server-kms    | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+openvidu-server-kms    | 	at io.openvidu.server.OpenViduServer.main(OpenViduServer.java:177)
+openvidu-server-kms    | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+openvidu-server-kms    | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+openvidu-server-kms    | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+openvidu-server-kms    | 	at java.lang.reflect.Method.invoke(Method.java:498)
+openvidu-server-kms    | 	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+openvidu-server-kms    | 	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+openvidu-server-kms    | 	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+openvidu-server-kms    | 	at org.springframework.boot.loader.PropertiesLauncher.main(PropertiesLauncher.java:521)
+openvidu-server-kms    | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sessionManager': Unsatisfied dependency expressed through field 'kcProvider'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kmsManager' defined in io.openvidu.server.OpenViduServer: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [io.openvidu.server.kurento.KurentoClientProvider]: Factory method 'kmsManager' threw exception; nested exception is org.kurento.commons.exception.KurentoException: Exception connecting to KMS
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:592)
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:370)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1219)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+openvidu-server-kms    | 	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:207)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1131)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1059)
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:589)
+openvidu-server-kms    | 	... 27 common frames omitted
+openvidu-server-kms    | Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kmsManager' defined in io.openvidu.server.OpenViduServer: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [io.openvidu.server.kurento.KurentoClientProvider]: Factory method 'kmsManager' threw exception; nested exception is org.kurento.commons.exception.KurentoException: Exception connecting to KMS
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1128)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1022)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:512)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+openvidu-server-kms    | 	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:207)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1131)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1059)
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:589)
+openvidu-server-kms    | 	... 40 common frames omitted
+openvidu-server-kms    | Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [io.openvidu.server.kurento.KurentoClientProvider]: Factory method 'kmsManager' threw exception; nested exception is org.kurento.commons.exception.KurentoException: Exception connecting to KMS
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+openvidu-server-kms    | 	... 52 common frames omitted
+openvidu-server-kms    | Caused by: org.kurento.commons.exception.KurentoException: Exception connecting to KMS
+openvidu-server-kms    | 	at org.kurento.client.KurentoClient.<init>(KurentoClient.java:258)
+openvidu-server-kms    | 	at org.kurento.client.KurentoClient.create(KurentoClient.java:128)
+openvidu-server-kms    | 	at org.kurento.client.KurentoClient.create(KurentoClient.java:121)
+openvidu-server-kms    | 	at io.openvidu.server.kurento.kms.FixedOneKmsManager.<init>(FixedOneKmsManager.java:33)
+openvidu-server-kms    | 	at io.openvidu.server.kurento.kms.FixedOneKmsManager.<init>(FixedOneKmsManager.java:28)
+openvidu-server-kms    | 	at io.openvidu.server.OpenViduServer.kmsManager(OpenViduServer.java:108)
+openvidu-server-kms    | 	at io.openvidu.server.OpenViduServer$$EnhancerBySpringCGLIB$$fe33573.CGLIB$kmsManager$0(<generated>)
+openvidu-server-kms    | 	at io.openvidu.server.OpenViduServer$$EnhancerBySpringCGLIB$$fe33573$$FastClassBySpringCGLIB$$807e395d.invoke(<generated>)
+openvidu-server-kms    | 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+openvidu-server-kms    | 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:356)
+openvidu-server-kms    | 	at io.openvidu.server.OpenViduServer$$EnhancerBySpringCGLIB$$fe33573.kmsManager(<generated>)
+openvidu-server-kms    | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+openvidu-server-kms    | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+openvidu-server-kms    | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+openvidu-server-kms    | 	at java.lang.reflect.Method.invoke(Method.java:498)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+openvidu-server-kms    | 	... 53 common frames omitted
+openvidu-server-kms    | Caused by: org.kurento.jsonrpc.JsonRpcException: [KurentoClient]  Exception connecting to WebSocket server ws://localhost:8888/kurento
+openvidu-server-kms    | 	at org.kurento.jsonrpc.client.AbstractJsonRpcClientWebSocket.internalConnectIfNecessary(AbstractJsonRpcClientWebSocket.java:734)
+openvidu-server-kms    | 	at org.kurento.jsonrpc.client.AbstractJsonRpcClientWebSocket.connectIfNecessary(AbstractJsonRpcClientWebSocket.java:846)
+openvidu-server-kms    | 	at org.kurento.jsonrpc.client.AbstractJsonRpcClientWebSocket.connect(AbstractJsonRpcClientWebSocket.java:677)
+openvidu-server-kms    | 	at org.kurento.client.KurentoClient.<init>(KurentoClient.java:250)
+openvidu-server-kms    | 	... 68 common frames omitted
+openvidu-server-kms    | Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/192.168.0.16:8888
+openvidu-server-kms    | 	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+openvidu-server-kms    | 	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+openvidu-server-kms    | 	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:347)
+openvidu-server-kms    | 	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340)
+openvidu-server-kms    | 	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:627)
+openvidu-server-kms    | 	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:551)
+openvidu-server-kms    | 	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:465)
+openvidu-server-kms    | 	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:437)
+openvidu-server-kms    | 	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:877)
+openvidu-server-kms    | 	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+openvidu-server-kms    | 	at java.lang.Thread.run(Thread.java:748)
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:52,230 DEBG fd 10 closed, stopped monitoring <POutputDispatcher at 140049116720304 for <Subprocess at 140049116945800 with name openvidu-server in state RUNNING> (stdout)>
+openvidu-server-kms    | 2018-12-12 09:48:52,231 INFO exited: openvidu-server (exit status 1; not expected)
+openvidu-server-kms    | 2018-12-12 09:48:52,232 DEBG received SIGCLD indicating a child quit
+openvidu-server-kms    | 2018-12-12 09:48:53,234 INFO spawned: 'openvidu-server' with pid 58
+openvidu-server-kms    | 2018-12-12 09:48:54,236 INFO success: openvidu-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+openvidu-server-kms    | 2018-12-12 09:48:54,377 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | 09:48:53,736 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+openvidu-server-kms    | 09:48:53,740 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+openvidu-server-kms    | 09:48:53,740 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/openvidu-server.jar!/BOOT-INF/classes!/logback.xml]
+openvidu-server-kms    | 09:48:53,828 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@312b1dae - URL [jar:file:/openvidu-server.jar!/BOOT-INF/classes!/logback.xml] is not of type file
+openvidu-server-kms    | 09:48:53,945 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+openvidu-server-kms    | 09:48:53,958 |-INFO in ch.qos.logback.core.joran.action.TimestampAction - Using context birth as time reference.
+openvidu-server-kms    | 09:48:53,975 |-INFO in ch.qos.logback.core.joran.action.TimestampAction - Adding property to the context with key="myTimestamp" and value="09-48-53" to the LOCAL scope
+openvidu-server-kms    | 09:48:53,976 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+openvidu-server-kms    | 09:48:53,999 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
+openvidu-server-kms    | 09:48:54,099 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - This appender no longer admits a layout as a sub-component, set an encoder instead.
+openvidu-server-kms    | 09:48:54,099 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - To ensure compatibility, wrapping your layout in LayoutWrappingEncoder.
+openvidu-server-kms    | 09:48:54,099 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also http://logback.qos.ch/codes.html#layoutInsteadOfEncoder for details
+openvidu-server-kms    | 09:48:54,100 |-INFO in ch.qos.logback.classic.joran.action.LevelAction - ROOT level set to INFO
+openvidu-server-kms    | 09:48:54,101 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
+openvidu-server-kms    | 09:48:54,371 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+openvidu-server-kms    | 09:48:54,372 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@7530d0a - Registering current configuration as safe fallback point
+openvidu-server-kms    | 
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:54,385 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:54,381 [main] io.openvidu.server.OpenViduServer (main) - Using /dev/urandom for secure random generation
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:55,373 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | 
+openvidu-server-kms    | ______________________________________________
+openvidu-server-kms    |    ____               __      ___     _       
+openvidu-server-kms    |   / __ \              \ \    / (_)   | |      
+openvidu-server-kms    |  | |  | |_ __   ___ _ _\ \  / / _  __| |_   _
+openvidu-server-kms    |  | |  | | '_ \ / _ \ '_ \ \/ / | |/ _` | | | |
+openvidu-server-kms    |  | |__| | |_) |  __/ | | \  /  | | (_| | |_| |
+openvidu-server-kms    |   \____/| .__/ \___|_| |_|\/   |_|\__,_|\__,_|
+openvidu-server-kms    |         | |
+openvidu-server-kms    |         |_|             version 2.6.0
+openvidu-server-kms    | ______________________________________________                                          
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:55,374 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | 
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:55,671 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:55,670 [main] io.openvidu.server.OpenViduServer (logStarting) - Starting OpenViduServer on openvidu-server-kms.vagrant_default with PID 58 (/openvidu-server.jar started by root in /)
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:55,675 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:55,672 [main] io.openvidu.server.OpenViduServer (logStartupProfileInfo) - The following profiles are active: docker
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:56,444 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:56,437 [ound-preinit] org.hibernate.validator.internal.util.Version (<clinit>) - HV000001: Hibernate Validator 5.2.4.Final
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:56,850 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:56,850 [main] org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext (prepareRefresh) - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5d6f64b1: startup date [Wed Dec 12 09:48:56 UTC 2018]; root of context hierarchy
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:59,186 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:59,185 [main] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor (<init>) - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:48:59,464 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:48:59,462 [main] io.openvidu.server.OpenViduServer (init) - OpenVidu Server using custom URL: [wss://127.0.0.1:8000]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:00,586 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:00,585 [main] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer (initialize) - Tomcat initialized with port(s): 4443 (https)
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:00,625 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:00,624 [main] org.apache.catalina.core.StandardService (log) - Starting service Tomcat
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:00,629 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:00,628 [main] org.apache.catalina.core.StandardEngine (log) - Starting Servlet Engine: Apache Tomcat/8.5.6
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:00,894 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:00,893 [-startStop-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] (log) - Initializing Spring embedded WebApplicationContext
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:00,895 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:00,894 [-startStop-1] org.springframework.web.context.ContextLoader (prepareEmbeddedWebApplicationContext) - Root WebApplicationContext: initialization completed in 4057 ms
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:01,336 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:01,335 [-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean (configure) - Mapping filter: 'characterEncodingFilter' to: [/*]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:01,339 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:01,338 [-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean (configure) - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:01,341 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:01,339 [-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean (configure) - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:01,341 [-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean (configure) - Mapping filter: 'requestContextFilter' to: [/*]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:01,347 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:01,346 [-startStop-1] org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean (configure) - Mapping filter: 'springSecurityFilterChain' to: [/*]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:01,350 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:01,347 [-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean (onStartup) - Mapping servlet: 'dispatcherServlet' to [/]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:02,496 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [WARN] 2018-12-12 09:49:02,493 [main] io.openvidu.server.coturn.CoturnCredentialsService (<init>) - No COTURN server is installed in the host machine. Response: /bin/sh: 1: turnadmin: not found
+openvidu-server-kms    | [WARN] 2018-12-12 09:49:02,494 [main] io.openvidu.server.coturn.CoturnCredentialsService (<init>) - No COTURN server will be automatically configured for clients
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:02,541 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:02,540 [main] io.openvidu.server.OpenViduServer (kmsManager) - Configuring OpenVidu Server to use first of the following kmss: [ws://localhost:8888/kurento]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:02,573 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:02,572 [atExec-e1-t0] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (connectNativeClient) - [KurentoClient]  Connecting native client
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:02,574 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:02,573 [atExec-e1-t0] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (connectNativeClient) - [KurentoClient]  Creating new NioEventLoopGroup
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:02,955 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:02,954 [oopGroup-2-1] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (initChannel) - [KurentoClient]  Inititating new Netty channel. Will create new handler too!
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:03,143 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [WARN] 2018-12-12 09:49:03,142 [atExec-e1-t0] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (closeChannel) - [KurentoClient]  Trying to close a JsonRpcClientNettyWebSocket with channel == null
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:03,148 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [WARN] 2018-12-12 09:49:03,146 [atExec-e1-t0] org.kurento.jsonrpc.client.JsonRpcClient (run) - [KurentoClient]  Error sending heartbeat to server. Exception: [KurentoClient]  Exception connecting to WebSocket server ws://localhost:8888/kurento
+openvidu-server-kms    | [WARN] 2018-12-12 09:49:03,146 [atExec-e1-t0] org.kurento.jsonrpc.client.JsonRpcClient (closeHeartbeatOnFailure) - [KurentoClient]  Stopping heartbeat and closing client: failure during heartbeat mechanism
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:03,155 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:03,154 [main] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (connectNativeClient) - [KurentoClient]  Connecting native client
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:03,154 [main] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (connectNativeClient) - [KurentoClient]  Creating new NioEventLoopGroup
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:03,170 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:03,162 [oopGroup-3-1] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (initChannel) - [KurentoClient]  Inititating new Netty channel. Will create new handler too!
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:03,177 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [WARN] 2018-12-12 09:49:03,176 [main] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (closeChannel) - [KurentoClient]  Trying to close a JsonRpcClientNettyWebSocket with channel == null
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:03,185 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [WARN] 2018-12-12 09:49:03,185 [main] org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext (refresh) - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sessionRestController': Unsatisfied dependency expressed through field 'sessionManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sessionManager': Unsatisfied dependency expressed through field 'kcProvider'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kmsManager' defined in io.openvidu.server.OpenViduServer: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [io.openvidu.server.kurento.KurentoClientProvider]: Factory method 'kmsManager' threw exception; nested exception is org.kurento.commons.exception.KurentoException: Exception connecting to KMS
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:03,191 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:03,191 [main] org.apache.catalina.core.StandardService (log) - Stopping service Tomcat
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:03,234 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:03,233 [main] org.springframework.boot.autoconfigure.logging.AutoConfigurationReportLoggingInitializer (logAutoConfigurationReport) - 
+openvidu-server-kms    | 
+openvidu-server-kms    | Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:03,246 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [ERROR] 2018-12-12 09:49:03,244 [main] org.springframework.boot.SpringApplication (reportFailure) - Application startup failed
+openvidu-server-kms    | org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sessionRestController': Unsatisfied dependency expressed through field 'sessionManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sessionManager': Unsatisfied dependency expressed through field 'kcProvider'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kmsManager' defined in io.openvidu.server.OpenViduServer: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [io.openvidu.server.kurento.KurentoClientProvider]: Factory method 'kmsManager' threw exception; nested exception is org.kurento.commons.exception.KurentoException: Exception connecting to KMS
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:592)
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:370)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1219)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:754)
+openvidu-server-kms    | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:861)
+openvidu-server-kms    | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+openvidu-server-kms    | 	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+openvidu-server-kms    | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+openvidu-server-kms    | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+openvidu-server-kms    | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+openvidu-server-kms    | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+openvidu-server-kms    | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+openvidu-server-kms    | 	at io.openvidu.server.OpenViduServer.main(OpenViduServer.java:177)
+openvidu-server-kms    | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+openvidu-server-kms    | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+openvidu-server-kms    | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+openvidu-server-kms    | 	at java.lang.reflect.Method.invoke(Method.java:498)
+openvidu-server-kms    | 	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+openvidu-server-kms    | 	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+openvidu-server-kms    | 	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+openvidu-server-kms    | 	at org.springframework.boot.loader.PropertiesLauncher.main(PropertiesLauncher.java:521)
+openvidu-server-kms    | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sessionManager': Unsatisfied dependency expressed through field 'kcProvider'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kmsManager' defined in io.openvidu.server.OpenViduServer: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [io.openvidu.server.kurento.KurentoClientProvider]: Factory method 'kmsManager' threw exception; nested exception is org.kurento.commons.exception.KurentoException: Exception connecting to KMS
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:592)
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:370)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1219)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+openvidu-server-kms    | 	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:207)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1131)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1059)
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:589)
+openvidu-server-kms    | 	... 27 common frames omitted
+openvidu-server-kms    | Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kmsManager' defined in io.openvidu.server.OpenViduServer: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [io.openvidu.server.kurento.KurentoClientProvider]: Factory method 'kmsManager' threw exception; nested exception is org.kurento.commons.exception.KurentoException: Exception connecting to KMS
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1128)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1022)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:512)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+openvidu-server-kms    | 	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:207)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1131)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1059)
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:589)
+openvidu-server-kms    | 	... 40 common frames omitted
+openvidu-server-kms    | Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [io.openvidu.server.kurento.KurentoClientProvider]: Factory method 'kmsManager' threw exception; nested exception is org.kurento.commons.exception.KurentoException: Exception connecting to KMS
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+openvidu-server-kms    | 	... 52 common frames omitted
+openvidu-server-kms    | Caused by: org.kurento.commons.exception.KurentoException: Exception connecting to KMS
+openvidu-server-kms    | 	at org.kurento.client.KurentoClient.<init>(KurentoClient.java:258)
+openvidu-server-kms    | 	at org.kurento.client.KurentoClient.create(KurentoClient.java:128)
+openvidu-server-kms    | 	at org.kurento.client.KurentoClient.create(KurentoClient.java:121)
+openvidu-server-kms    | 	at io.openvidu.server.kurento.kms.FixedOneKmsManager.<init>(FixedOneKmsManager.java:33)
+openvidu-server-kms    | 	at io.openvidu.server.kurento.kms.FixedOneKmsManager.<init>(FixedOneKmsManager.java:28)
+openvidu-server-kms    | 	at io.openvidu.server.OpenViduServer.kmsManager(OpenViduServer.java:108)
+openvidu-server-kms    | 	at io.openvidu.server.OpenViduServer$$EnhancerBySpringCGLIB$$fe33573.CGLIB$kmsManager$0(<generated>)
+openvidu-server-kms    | 	at io.openvidu.server.OpenViduServer$$EnhancerBySpringCGLIB$$fe33573$$FastClassBySpringCGLIB$$807e395d.invoke(<generated>)
+openvidu-server-kms    | 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+openvidu-server-kms    | 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:356)
+openvidu-server-kms    | 	at io.openvidu.server.OpenViduServer$$EnhancerBySpringCGLIB$$fe33573.kmsManager(<generated>)
+openvidu-server-kms    | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+openvidu-server-kms    | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+openvidu-server-kms    | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+openvidu-server-kms    | 	at java.lang.reflect.Method.invoke(Method.java:498)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+openvidu-server-kms    | 	... 53 common frames omitted
+openvidu-server-kms    | Caused by: org.kurento.jsonrpc.JsonRpcException: [KurentoClient]  Exception connecting to WebSocket server ws://localhost:8888/kurento
+openvidu-server-kms    | 	at org.kurento.jsonrpc.client.AbstractJsonRpcClientWebSocket.internalConnectIfNecessary(AbstractJsonRpcClientWebSocket.java:734)
+openvidu-server-kms    | 	at org.kurento.jsonrpc.client.AbstractJsonRpcClientWebSocket.connectIfNecessary(AbstractJsonRpcClientWebSocket.java:846)
+openvidu-server-kms    | 	at org.kurento.jsonrpc.client.AbstractJsonRpcClientWebSocket.connect(AbstractJsonRpcClientWebSocket.java:677)
+openvidu-server-kms    | 	at org.kurento.client.KurentoClient.<init>(KurentoClient.java:250)
+openvidu-server-kms    | 	... 68 common frames omitted
+openvidu-server-kms    | Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/192.168.0.16:8888
+openvidu-server-kms    | 	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+openvidu-server-kms    | 	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+openvidu-server-kms    | 	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:347)
+openvidu-server-kms    | 	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340)
+openvidu-server-kms    | 	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:627)
+openvidu-server-kms    | 	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:551)
+openvidu-server-kms    | 	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:465)
+openvidu-server-kms    | 	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:437)
+openvidu-server-kms    | 	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:877)
+openvidu-server-kms    | 	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+openvidu-server-kms    | 	at java.lang.Thread.run(Thread.java:748)
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:06,388 DEBG fd 10 closed, stopped monitoring <POutputDispatcher at 140049116720304 for <Subprocess at 140049116945800 with name openvidu-server in state RUNNING> (stdout)>
+openvidu-server-kms    | 2018-12-12 09:49:06,390 INFO exited: openvidu-server (exit status 1; not expected)
+openvidu-server-kms    | 2018-12-12 09:49:06,390 DEBG received SIGCLD indicating a child quit
+openvidu-server-kms    | 2018-12-12 09:49:07,392 INFO spawned: 'openvidu-server' with pid 89
+openvidu-server-kms    | 2018-12-12 09:49:08,394 INFO success: openvidu-server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+openvidu-server-kms    | 2018-12-12 09:49:09,017 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | 09:49:08,076 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+openvidu-server-kms    | 09:49:08,077 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+openvidu-server-kms    | 09:49:08,077 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/openvidu-server.jar!/BOOT-INF/classes!/logback.xml]
+openvidu-server-kms    | 09:49:08,188 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@312b1dae - URL [jar:file:/openvidu-server.jar!/BOOT-INF/classes!/logback.xml] is not of type file
+openvidu-server-kms    | 09:49:08,405 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+openvidu-server-kms    | 09:49:08,425 |-INFO in ch.qos.logback.core.joran.action.TimestampAction - Using context birth as time reference.
+openvidu-server-kms    | 09:49:08,448 |-INFO in ch.qos.logback.core.joran.action.TimestampAction - Adding property to the context with key="myTimestamp" and value="09-49-07" to the LOCAL scope
+openvidu-server-kms    | 09:49:08,450 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+openvidu-server-kms    | 09:49:08,481 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
+openvidu-server-kms    | 09:49:08,640 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - This appender no longer admits a layout as a sub-component, set an encoder instead.
+openvidu-server-kms    | 09:49:08,640 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - To ensure compatibility, wrapping your layout in LayoutWrappingEncoder.
+openvidu-server-kms    | 09:49:08,640 |-WARN in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also http://logback.qos.ch/codes.html#layoutInsteadOfEncoder for details
+openvidu-server-kms    | 09:49:08,642 |-INFO in ch.qos.logback.classic.joran.action.LevelAction - ROOT level set to INFO
+openvidu-server-kms    | 09:49:08,642 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
+openvidu-server-kms    | 09:49:09,009 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+openvidu-server-kms    | 09:49:09,011 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@7530d0a - Registering current configuration as safe fallback point
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:09,024 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | 
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:09,046 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:09,031 [main] io.openvidu.server.OpenViduServer (main) - Using /dev/urandom for secure random generation
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:10,011 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | 
+openvidu-server-kms    | ______________________________________________
+openvidu-server-kms    |    ____               __      ___     _       
+openvidu-server-kms    |   / __ \              \ \    / (_)   | |      
+openvidu-server-kms    |  | |  | |_ __   ___ _ _\ \  / / _  __| |_   _
+openvidu-server-kms    |  | |  | | '_ \ / _ \ '_ \ \/ / | |/ _` | | | |
+openvidu-server-kms    |  | |__| | |_) |  __/ | | \  /  | | (_| | |_| |
+openvidu-server-kms    |   \____/| .__/ \___|_| |_|\/   |_|\__,_|\__,_|
+openvidu-server-kms    |         | |
+openvidu-server-kms    |         |_|             version 2.6.0
+openvidu-server-kms    | ______________________________________________                                          
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:10,018 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | 
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:10,330 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:10,329 [main] io.openvidu.server.OpenViduServer (logStarting) - Starting OpenViduServer on openvidu-server-kms.vagrant_default with PID 89 (/openvidu-server.jar started by root in /)
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:10,336 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:10,330 [main] io.openvidu.server.OpenViduServer (logStartupProfileInfo) - The following profiles are active: docker
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:10,970 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:10,967 [ound-preinit] org.hibernate.validator.internal.util.Version (<clinit>) - HV000001: Hibernate Validator 5.2.4.Final
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:11,511 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:11,509 [main] org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext (prepareRefresh) - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5d6f64b1: startup date [Wed Dec 12 09:49:11 UTC 2018]; root of context hierarchy
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:14,631 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:14,630 [main] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor (<init>) - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:14,851 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:14,850 [main] io.openvidu.server.OpenViduServer (init) - OpenVidu Server using custom URL: [wss://127.0.0.1:8000]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:15,817 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:15,816 [main] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer (initialize) - Tomcat initialized with port(s): 4443 (https)
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:15,844 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:15,843 [main] org.apache.catalina.core.StandardService (log) - Starting service Tomcat
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:15,849 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:15,848 [main] org.apache.catalina.core.StandardEngine (log) - Starting Servlet Engine: Apache Tomcat/8.5.6
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:16,044 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:16,043 [-startStop-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] (log) - Initializing Spring embedded WebApplicationContext
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:16,047 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:16,046 [-startStop-1] org.springframework.web.context.ContextLoader (prepareEmbeddedWebApplicationContext) - Root WebApplicationContext: initialization completed in 4551 ms
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:16,667 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:16,666 [-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean (configure) - Mapping filter: 'characterEncodingFilter' to: [/*]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:16,671 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:16,670 [-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean (configure) - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:16,676 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:16,675 [-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean (configure) - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:16,679 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:16,679 [-startStop-1] org.springframework.boot.web.servlet.FilterRegistrationBean (configure) - Mapping filter: 'requestContextFilter' to: [/*]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:16,685 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:16,684 [-startStop-1] org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean (configure) - Mapping filter: 'springSecurityFilterChain' to: [/*]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:16,689 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:16,688 [-startStop-1] org.springframework.boot.web.servlet.ServletRegistrationBean (onStartup) - Mapping servlet: 'dispatcherServlet' to [/]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:17,817 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [WARN] 2018-12-12 09:49:17,816 [main] io.openvidu.server.coturn.CoturnCredentialsService (<init>) - No COTURN server is installed in the host machine. Response: /bin/sh: 1: turnadmin: not found
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:17,818 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [WARN] 2018-12-12 09:49:17,816 [main] io.openvidu.server.coturn.CoturnCredentialsService (<init>) - No COTURN server will be automatically configured for clients
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:17,867 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:17,866 [main] io.openvidu.server.OpenViduServer (kmsManager) - Configuring OpenVidu Server to use first of the following kmss: [ws://localhost:8888/kurento]
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:17,900 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:17,899 [atExec-e1-t0] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (connectNativeClient) - [KurentoClient]  Connecting native client
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:17,902 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:17,902 [atExec-e1-t0] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (connectNativeClient) - [KurentoClient]  Creating new NioEventLoopGroup
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:18,283 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:18,282 [oopGroup-2-1] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (initChannel) - [KurentoClient]  Inititating new Netty channel. Will create new handler too!
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:18,408 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [WARN] 2018-12-12 09:49:18,407 [atExec-e1-t0] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (closeChannel) - [KurentoClient]  Trying to close a JsonRpcClientNettyWebSocket with channel == null
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:18,413 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [WARN] 2018-12-12 09:49:18,413 [atExec-e1-t0] org.kurento.jsonrpc.client.JsonRpcClient (run) - [KurentoClient]  Error sending heartbeat to server. Exception: [KurentoClient]  Exception connecting to WebSocket server ws://localhost:8888/kurento
+openvidu-server-kms    | [WARN] 2018-12-12 09:49:18,413 [atExec-e1-t0] org.kurento.jsonrpc.client.JsonRpcClient (closeHeartbeatOnFailure) - [KurentoClient]  Stopping heartbeat and closing client: failure during heartbeat mechanism
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:18,416 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:18,413 [main] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (connectNativeClient) - [KurentoClient]  Connecting native client
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:18,418 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:18,416 [main] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (connectNativeClient) - [KurentoClient]  Creating new NioEventLoopGroup
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:18,423 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:18,423 [oopGroup-3-1] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (initChannel) - [KurentoClient]  Inititating new Netty channel. Will create new handler too!
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:18,431 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [WARN] 2018-12-12 09:49:18,430 [main] org.kurento.jsonrpc.client.JsonRpcClientNettyWebSocket (closeChannel) - [KurentoClient]  Trying to close a JsonRpcClientNettyWebSocket with channel == null
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:18,440 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [WARN] 2018-12-12 09:49:18,436 [main] org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext (refresh) - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sessionRestController': Unsatisfied dependency expressed through field 'sessionManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sessionManager': Unsatisfied dependency expressed through field 'kcProvider'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kmsManager' defined in io.openvidu.server.OpenViduServer: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [io.openvidu.server.kurento.KurentoClientProvider]: Factory method 'kmsManager' threw exception; nested exception is org.kurento.commons.exception.KurentoException: Exception connecting to KMS
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:18,443 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:18,440 [main] org.apache.catalina.core.StandardService (log) - Stopping service Tomcat
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:18,486 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [INFO] 2018-12-12 09:49:18,485 [main] org.springframework.boot.autoconfigure.logging.AutoConfigurationReportLoggingInitializer (logAutoConfigurationReport) - 
+openvidu-server-kms    | 
+openvidu-server-kms    | Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:18,502 DEBG 'openvidu-server' stdout output:
+openvidu-server-kms    | [ERROR] 2018-12-12 09:49:18,501 [main] org.springframework.boot.SpringApplication (reportFailure) - Application startup failed
+openvidu-server-kms    | org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sessionRestController': Unsatisfied dependency expressed through field 'sessionManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sessionManager': Unsatisfied dependency expressed through field 'kcProvider'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kmsManager' defined in io.openvidu.server.OpenViduServer: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [io.openvidu.server.kurento.KurentoClientProvider]: Factory method 'kmsManager' threw exception; nested exception is org.kurento.commons.exception.KurentoException: Exception connecting to KMS
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:592)
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:370)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1219)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:754)
+openvidu-server-kms    | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:861)
+openvidu-server-kms    | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
+openvidu-server-kms    | 	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+openvidu-server-kms    | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+openvidu-server-kms    | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371)
+openvidu-server-kms    | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+openvidu-server-kms    | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186)
+openvidu-server-kms    | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175)
+openvidu-server-kms    | 	at io.openvidu.server.OpenViduServer.main(OpenViduServer.java:177)
+openvidu-server-kms    | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+openvidu-server-kms    | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+openvidu-server-kms    | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+openvidu-server-kms    | 	at java.lang.reflect.Method.invoke(Method.java:498)
+openvidu-server-kms    | 	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+openvidu-server-kms    | 	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+openvidu-server-kms    | 	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+openvidu-server-kms    | 	at org.springframework.boot.loader.PropertiesLauncher.main(PropertiesLauncher.java:521)
+openvidu-server-kms    | Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sessionManager': Unsatisfied dependency expressed through field 'kcProvider'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kmsManager' defined in io.openvidu.server.OpenViduServer: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [io.openvidu.server.kurento.KurentoClientProvider]: Factory method 'kmsManager' threw exception; nested exception is org.kurento.commons.exception.KurentoException: Exception connecting to KMS
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:592)
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:370)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1219)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+openvidu-server-kms    | 	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:207)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1131)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1059)
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:589)
+openvidu-server-kms    | 	... 27 common frames omitted
+openvidu-server-kms    | Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kmsManager' defined in io.openvidu.server.OpenViduServer: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [io.openvidu.server.kurento.KurentoClientProvider]: Factory method 'kmsManager' threw exception; nested exception is org.kurento.commons.exception.KurentoException: Exception connecting to KMS
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1128)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1022)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:512)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+openvidu-server-kms    | 	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:207)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1131)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1059)
+openvidu-server-kms    | 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:589)
+openvidu-server-kms    | 	... 40 common frames omitted
+openvidu-server-kms    | Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [io.openvidu.server.kurento.KurentoClientProvider]: Factory method 'kmsManager' threw exception; nested exception is org.kurento.commons.exception.KurentoException: Exception connecting to KMS
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+openvidu-server-kms    | 	... 52 common frames omitted
+openvidu-server-kms    | Caused by: org.kurento.commons.exception.KurentoException: Exception connecting to KMS
+openvidu-server-kms    | 	at org.kurento.client.KurentoClient.<init>(KurentoClient.java:258)
+openvidu-server-kms    | 	at org.kurento.client.KurentoClient.create(KurentoClient.java:128)
+openvidu-server-kms    | 	at org.kurento.client.KurentoClient.create(KurentoClient.java:121)
+openvidu-server-kms    | 	at io.openvidu.server.kurento.kms.FixedOneKmsManager.<init>(FixedOneKmsManager.java:33)
+openvidu-server-kms    | 	at io.openvidu.server.kurento.kms.FixedOneKmsManager.<init>(FixedOneKmsManager.java:28)
+openvidu-server-kms    | 	at io.openvidu.server.OpenViduServer.kmsManager(OpenViduServer.java:108)
+openvidu-server-kms    | 	at io.openvidu.server.OpenViduServer$$EnhancerBySpringCGLIB$$fe33573.CGLIB$kmsManager$0(<generated>)
+openvidu-server-kms    | 	at io.openvidu.server.OpenViduServer$$EnhancerBySpringCGLIB$$fe33573$$FastClassBySpringCGLIB$$807e395d.invoke(<generated>)
+openvidu-server-kms    | 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+openvidu-server-kms    | 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:356)
+openvidu-server-kms    | 	at io.openvidu.server.OpenViduServer$$EnhancerBySpringCGLIB$$fe33573.kmsManager(<generated>)
+openvidu-server-kms    | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+openvidu-server-kms    | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+openvidu-server-kms    | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+openvidu-server-kms    | 	at java.lang.reflect.Method.invoke(Method.java:498)
+openvidu-server-kms    | 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+openvidu-server-kms    | 	... 53 common frames omitted
+openvidu-server-kms    | Caused by: org.kurento.jsonrpc.JsonRpcException: [KurentoClient]  Exception connecting to WebSocket server ws://localhost:8888/kurento
+openvidu-server-kms    | 	at org.kurento.jsonrpc.client.AbstractJsonRpcClientWebSocket.internalConnectIfNecessary(AbstractJsonRpcClientWebSocket.java:734)
+openvidu-server-kms    | 	at org.kurento.jsonrpc.client.AbstractJsonRpcClientWebSocket.connectIfNecessary(AbstractJsonRpcClientWebSocket.java:846)
+openvidu-server-kms    | 	at org.kurento.jsonrpc.client.AbstractJsonRpcClientWebSocket.connect(AbstractJsonRpcClientWebSocket.java:677)
+openvidu-server-kms    | 	at org.kurento.client.KurentoClient.<init>(KurentoClient.java:250)
+openvidu-server-kms    | 	... 68 common frames omitted
+openvidu-server-kms    | Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/192.168.0.16:8888
+openvidu-server-kms    | 	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+openvidu-server-kms    | 	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+openvidu-server-kms    | 	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:347)
+openvidu-server-kms    | 	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340)
+openvidu-server-kms    | 	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:627)
+openvidu-server-kms    | 	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:551)
+openvidu-server-kms    | 	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:465)
+openvidu-server-kms    | 	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:437)
+openvidu-server-kms    | 	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:877)
+openvidu-server-kms    | 	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+openvidu-server-kms    | 	at java.lang.Thread.run(Thread.java:748)
+openvidu-server-kms    | 
+openvidu-server-kms    | 2018-12-12 09:49:21,648 DEBG fd 10 closed, stopped monitoring <POutputDispatcher at 140049116720304 for <Subprocess at 140049116945800 with name openvidu-server in state RUNNING> (stdout)>
+openvidu-server-kms    | 2018-12-12 09:49:21,650 INFO exited: openvidu-server (exit status 1; not expected)
+openvidu-server-kms    | 2018-12-12 09:49:21,650 DEBG received SIGCLD indicating a child quit
+openvidu-server-kms    | 2018-12-12 09:49:22,654 INFO spawned: 'openvidu-server' with pid 120
