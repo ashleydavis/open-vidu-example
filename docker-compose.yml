@@ -4,15 +4,9 @@ services:
   openvidu-server-kms:
     image: openvidu/openvidu-server-kms:latest
     container_name: openvidu-server-kms
-    volumes:
-     - /var/run/docker.sock:/var/run/docker.sock
-     - ./videos:/videos
     ports:
      - "4443:4443"
     environment:
-     - openvidu.recording=true
-     - openvidu.recording.path=/videos
-     - openvidu.recording.public-access=true
      - openvidu.secret=MY_SECRET
      - openvidu.publicurl=http://127.0.0.1:8000
     restart: always
