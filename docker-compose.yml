@@ -1,0 +1,35 @@
+version: '3'
+services:
+
+  openvidu-server-kms:
+    image: openvidu/openvidu-server-kms:latest
+    container_name: openvidu-server-kms
+    volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+     - "4443:4443"
+    environment:
+     - openvidu.recording=true
+     - openvidu.recording.path=/videos
+     - openvidu.recording.public-access=true
+     - openvidu.secret=MY_SECRET
+     - openvidu.publicurl=http://127.0.0.1:8000
+    restart: always
+
+  web:
+    build: ./proxy
+    container_name: web
+    volumes:
+     - ./tmp/npm:/root/.npm:z
+     - ./proxy/src:/usr/src/app/src:z
+     - ./proxy/static:/usr/src/app/static:z
+    ports:
+     - "80:80"
+    environment:
+     - PORT=80
+     - NODE_ENV=development
+     - PROXY_TARGET=https://openvidu-server-kms:4443', 
+    depends_on:
+     - openvidu-server-kms
+    restart: always
+

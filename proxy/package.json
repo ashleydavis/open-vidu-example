@@ -1,0 +1,22 @@
+{
+  "name": "openvidu-proxy-server",
+  "version": "1.0.0",
+  "description": "A proxy server for OpenVidu.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "start:dev": "nodemon --legacy-watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "http-proxy-middleware": "^0.19.1",
+    "morgan-body": "^2.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  }
+}
